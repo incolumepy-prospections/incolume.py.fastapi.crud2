@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "incolume.py.fastapi.crud2"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["Britodfbr <britodfbr@gmail.com>"]
 license = "Unlicense"
