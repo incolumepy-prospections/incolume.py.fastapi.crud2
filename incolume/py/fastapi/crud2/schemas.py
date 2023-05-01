@@ -1,7 +1,8 @@
 # schemas.py
+from enum import Enum
 from typing import List, Optional
 from uuid import UUID, uuid4
-from enum import Enum
+
 from pydantic import BaseModel
 
 

@@ -3,8 +3,9 @@ Principal Module.
 
 Update metadata from version by semver
 """
-from tomli import load
 from pathlib import Path
+
+from tomli import load
 
 configfile = Path(__file__).parents[4].joinpath("pyproject.toml")
 versionfile = Path(__file__).parent.joinpath("version.txt")

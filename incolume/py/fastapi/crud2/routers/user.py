@@ -1,11 +1,10 @@
 import logging
-from fastapi import APIRouter
-from fastapi import HTTPException
 from uuid import UUID
 
-from incolume.py.fastapi.crud2.schemas import User, UpdateUser
-from incolume.py.fastapi.crud2.data_base.connections import db
+from fastapi import APIRouter, HTTPException
 
+from incolume.py.fastapi.crud2.data_base.connections import db
+from incolume.py.fastapi.crud2.schemas import UpdateUser, User
 
 router = APIRouter(prefix="/user")
 
