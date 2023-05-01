@@ -1,7 +1,9 @@
+import logging
 from fastapi import APIRouter
-from uuid import UUID
 from fastapi import HTTPException
-from models import Gender, Role, User, UpdateUser
+from uuid import UUID
+
+from incolume.py.fastapi.crud2.models import User, UpdateUser
 from incolume.py.fastapi.crud2.data_base.connections import db
 
 
