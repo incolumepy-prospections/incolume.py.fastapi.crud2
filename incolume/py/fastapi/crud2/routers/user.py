@@ -1,3 +1,4 @@
+"""Routers for user."""
 import logging
 from uuid import UUID
 
@@ -11,17 +12,20 @@ router = APIRouter(prefix="/user")
 
 @router.post("/", tags=["Users"], status_code=201)
 async def create_user(user: User):
+    """Create User."""
     db.append(user)
     return {"id": user.id}
 
 
 @router.get("/", tags=["Users"], status_code=202)
 async def get_users():
+    """Get users."""
     return db
 
 
 @router.delete("/{user_id}", tags=["Users"], status_code=200)
 async def delete_user(user_id: UUID):
+    """Delete User."""
     for user in db:
         if user.id == user_id:
             db.remove(user)
@@ -33,6 +37,7 @@ async def delete_user(user_id: UUID):
 
 @router.put("/{user_id}", tags=["Users"], status_code=202)
 async def update_user(user_update: UpdateUser, user_id: UUID):
+    """Update User."""
     for user in db:
         if user.id == user_id:
             if user_update.first_name is not None:

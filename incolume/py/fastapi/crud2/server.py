@@ -1,3 +1,4 @@
+"""Server module."""
 from fastapi import FastAPI
 
 from incolume.py.fastapi.crud2 import __version__
@@ -8,6 +9,7 @@ app = FastAPI(version=__version__)
 
 @app.get("/")
 async def root(msg: str = ""):
+    """Endpoint for root."""
     msg = msg or "Hello world"
     return {"greeting": msg}
 

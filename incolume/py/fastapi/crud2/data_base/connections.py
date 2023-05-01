@@ -1,3 +1,4 @@
+"""Connections module."""
 from typing import List
 
 from incolume.py.fastapi.crud2.schemas import Gender, Role, User
