@@ -1,5 +1,5 @@
 from typing import List
-from incolume.py.fastapi.crud2.models import Gender, Role, User
+from incolume.py.fastapi.crud2.schemas import Gender, Role, User
 
 db: List[User] = [
     User(

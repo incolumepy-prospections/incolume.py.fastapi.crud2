@@ -3,7 +3,7 @@ from fastapi import APIRouter
 from fastapi import HTTPException
 from uuid import UUID
 
-from incolume.py.fastapi.crud2.models import User, UpdateUser
+from incolume.py.fastapi.crud2.schemas import User, UpdateUser
 from incolume.py.fastapi.crud2.data_base.connections import db
 
 
