@@ -10,18 +10,18 @@ from incolume.py.fastapi.crud2.data_base.connections import db
 router = APIRouter(prefix='/user')
 
 
-@router.post('/', tags=['Users'])
+@router.post('/', tags=['Users'], status_code=201)
 async def create_user(user: User):
     db.append(user)
     return {"id": user.id}
 
 
-@router.get("/", tags=['Users'])
+@router.get("/", tags=['Users'], status_code=202)
 async def get_users():
     return db
 
 
-@router.delete("/{user_id}", tags=['Users'])
+@router.delete("/{user_id}", tags=['Users'], status_code=200)
 async def delete_user(user_id: UUID):
     for user in db:
         if user.id == user_id:
@@ -32,7 +32,7 @@ async def delete_user(user_id: UUID):
     )
 
 
-@router.put("/{user_id}", tags=['Users'])
+@router.put("/{user_id}", tags=['Users'], status_code=202)
 async def update_user(user_update: UpdateUser, user_id: UUID):
     for user in db:
         if user.id == user_id:
