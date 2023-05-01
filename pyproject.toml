@@ -24,6 +24,7 @@ tox = "<4.5.1"
 mypy = "^1.2.0"
 mypy-extensions = "^1.0.0"
 safety = "^2.3.5"
+flake8 = "^6.0.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -175,7 +176,7 @@ include_trailing_comma = true
 
 #[pylava]
 # TODO --Fail-- verificar disponibilidade no futuro; não funciona com pyproject.toml
-# 
+#
 #format = 'pylint'
 #async = 1
 ## ignore = D203,D213,F0401,C0111,E731,I0011
