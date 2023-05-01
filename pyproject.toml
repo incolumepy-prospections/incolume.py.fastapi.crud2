@@ -96,7 +96,11 @@ exclude = '''
 '''
 
 [tool.taskipy.tasks]
+lint_black={help='Checking with black', cmd='poetry run black --check --diff incolume tests'}
+pre_lint="poetry run task lint_black"
+lint={help='Checking all linters configurated', cmd=''}
 prerelease={cmd='v=$(poetry version prerelease) && poetry run pytest && git ci -m "$v" pyproject.toml coverage_report $(find incolume* -name version.txt)', help='poetry version prerelease'}
+pre_patch='poetry run task lint'
 patch={cmd='v=$(poetry version patch) && poetry run pytest && git ci -m "$v" pyproject.toml coverage_report $(find incolume* -name version.txt)', help='poetry version patch'}
 preminor={cmd='v=$(poetry version preminor) && poetry run pytest && git ci -m "$v" pyproject.toml coverage_report $(find incolume* -name version.txt)', help='poetry version preminor'}
 premajor={cmd='v=$(poetry version premajor) && poetry run pytest && git ci -m "$v" pyproject.toml coverage_report $(find incolume* -name version.txt)', help='poetry version premajor'}
