@@ -158,6 +158,17 @@ multi_line_output = 3
 include_trailing_comma = true
 
 
+#[pylava]
+# TODO --Fail-- verificar disponibilidade no futuro; não funciona com pyproject.toml
+# 
+#format = 'pylint'
+#async = 1
+## ignore = D203,D213,F0401,C0111,E731,I0011
+## linters = pycodestyle,pyflakes,mccabe,pydocstyle,pylint
+#paths = ['src']
+## skip = pylava/inirama.py,pylava/libs/*
+#verbose = 0
+
 [tool.tox]
 legacy_tox_ini = """
 [tox]
