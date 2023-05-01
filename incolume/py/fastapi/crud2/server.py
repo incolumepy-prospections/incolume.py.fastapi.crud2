@@ -5,7 +5,12 @@ from models import Gender, Role, User, UpdateUser
 from uuid import UUID
 from fastapi import HTTPException
 
-app = FastAPI()
+from incolume.py.fastapi.crud2 import __version__
+
+
+app = FastAPI(version=__version__)
+
+
 db: List[User] = [
     User(
         id=uuid4(),
