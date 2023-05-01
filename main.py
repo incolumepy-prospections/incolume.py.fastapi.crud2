@@ -45,18 +45,18 @@ async def root(msg: str = ''):
     return {"greeting": msg}
 
 
-@app.post("/api/v1/users")
+@app.post("/api/v1/users", tags=['Users'])
 async def create_user(user: User):
     db.append(user)
     return {"id": user.id}
 
 
-@app.get("/api/v1/users")
+@app.get("/api/v1/users", tags=['Users'])
 async def get_users():
     return db
 
 
-@app.delete("/api/v1/users/{user_id}")
+@app.delete("/api/v1/users/{user_id}", tags=['Users'])
 async def delete_user(user_id: UUID):
     for user in db:
         if user.id == user_id:
@@ -67,7 +67,7 @@ async def delete_user(user_id: UUID):
     )
 
 
-@app.put("/api/v1/users/{user_id}")
+@app.put("/api/v1/users/{user_id}", tags=['Users'])
 async def update_user(user_update: UpdateUser, user_id: UUID):
     for user in db:
         if user.id == user_id:
