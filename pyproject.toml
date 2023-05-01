@@ -151,6 +151,13 @@ disable = [
   "unspecified-encoding",
 ]
 
+
+[tool.isort]
+multi_line_output = 3
+#line_length = 120
+include_trailing_comma = true
+
+
 [tool.taskipy.tasks]
 lint_black={help='Checking with black', cmd='poetry run black --check --diff incolume tests'}
 lint_isort={help='Checking with isort', cmd='poetry run isort --check --atomic --py all incolume/ tests/'}
