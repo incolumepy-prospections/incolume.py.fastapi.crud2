@@ -3,5 +3,5 @@ import uvicorn
 from incolume.py.fastapi.crud2.server import app
 
 
-if __name__ == '__main__':    # pragma: no cover
-    uvicorn.run(app, host='0.0.0.0', port=5001, reload=True)
+if __name__ == "__main__":  # pragma: no cover
+    uvicorn.run(app, host="0.0.0.0", port=5001, reload=True)
