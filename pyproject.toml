@@ -35,14 +35,12 @@ build-backend = "poetry.core.masonry.api"
 log_format = '%(asctime)s; %(levelname)-8s; %(name)s; %(module)s; %(funcName)s; %(message)s'
 log_date_format ='%FT%T%N%z'
 addopts = "--doctest-modules --cov=incolume -sx --cov-report term-missing --cov-report html:coverage_report/html --cov-report xml:coverage_report/cov.xml"
-testpaths = [
-  "tests",
-]
+testpaths = ["tests"]
+
 markers = [
   "slow: marks tests as slow (deselect with '-m \"not slow\"')",
   "webtest: marks tests as webtest (deselect with '-m \"not webtest\"')",
-  "fast: marks tests as fast (deselect with '-m \"not fast\"')",
-]
+  "fast: marks tests as fast (deselect with '-m \"not fast\"')", ]
 
 [tool.coverage.html]
 directory = "coverage_report/html"
@@ -56,8 +54,7 @@ omit = [
   # omit everything in /usr
   "/usr/*",
   # omit this single file
-  "configure/truncus.py",
-]
+  "configure/truncus.py", ]
 
 [tool.coverage.report]
 exclude_lines = [
@@ -73,17 +70,15 @@ exclude_lines = [
   "def run",
   "def terminal.",
   "__author__",
-  "class IElements"
-]
+  "class IElements",  ]
 
 [tool.black]
 line-length = 79
 target-version = ['py38', 'py39', 'py310', 'py311']
 include = '\.pyi?$'
-exclude = '''
+exclude = '''/(
 # A regex preceded with ^/ will apply only to files and directories
 # in the root of the project.
-/(
   ^/foo.py    # exclude a file named foo.py in the root of the project
   | \.git
   | \.hg
@@ -99,9 +94,7 @@ exclude = '''
   # The following are specific to Black, you probably don't want those.
   | blib2to3
   | tests/data
-  | profiling
-)/
-'''
+  | profiling)/'''
 
 [tool.pylint.format]
 # Maximum number of characters on a single line.
@@ -149,8 +142,7 @@ disable = [
   "missing-docstring",
 
   "no-member",
-  "unspecified-encoding",
-]
+  "unspecified-encoding", ]
 
 [tool.mypy]
 mypy_path = "incolume"
@@ -255,8 +247,7 @@ commands = poetry run pylint incolumepy/ tests/
 commands = poetry run black --check incolumepy/ tests/
 
 [testenv:safety]
-commands = poetry run safety check
-"""
+commands = poetry run safety check    """
 
 [tool.taskipy.tasks]
 lint_black={help='Checking with black', cmd='poetry run black --check --diff incolume tests'}
