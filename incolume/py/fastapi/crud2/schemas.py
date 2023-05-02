@@ -1,21 +1,29 @@
+"""Schemas module."""
 # schemas.py
+from enum import Enum
 from typing import List, Optional
 from uuid import UUID, uuid4
-from enum import Enum
+
 from pydantic import BaseModel
 
 
 class Gender(str, Enum):
-    male = "male"
-    female = "female"
+    """Enum for Gender."""
+
+    MALE = "male"
+    FEMALE = "female"
 
 
 class Role(str, Enum):
-    admin = "admin"
-    user = "user"
+    """Enum for Role."""
+
+    ADMIN = "admin"
+    USER = "user"
 
 
 class User(BaseModel):
+    """Schema for User."""
+
     id: Optional[UUID] = uuid4()
     first_name: str
     last_name: str
@@ -24,6 +32,8 @@ class User(BaseModel):
 
 
 class UpdateUser(BaseModel):
+    """Schema for User update."""
+
     first_name: Optional[str]
     last_name: Optional[str]
     gender: Optional[Gender]
