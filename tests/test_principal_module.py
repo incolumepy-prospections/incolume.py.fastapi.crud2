@@ -1,9 +1,7 @@
-import pytest
-
-__author__ = "@britodfbr"  # pragma: no cover
 import re
 
 import pytest
+from tomli import TOMLDecodeError
 
 from incolume.py.fastapi.crud2 import (
     __version__,
@@ -48,7 +46,7 @@ class TestCase:
             with entrance.open("rb") as f:
                 version = load(f)["tool"]["poetry"]["version"]
 
-        except Exception:
+        except TOMLDecodeError:
             version = entrance.read_text().strip()
         assert version == __version__
 

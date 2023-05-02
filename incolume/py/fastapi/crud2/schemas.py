@@ -10,15 +10,15 @@ from pydantic import BaseModel
 class Gender(str, Enum):
     """Enum for Gender."""
 
-    male = "male"
-    female = "female"
+    MALE = "male"
+    FEMALE = "female"
 
 
 class Role(str, Enum):
     """Enum for Role."""
 
-    admin = "admin"
-    user = "user"
+    ADMIN = "admin"
+    USER = "user"
 
 
 class User(BaseModel):

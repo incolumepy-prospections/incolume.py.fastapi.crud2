@@ -140,7 +140,7 @@ disable = [
   "unused-argument",
 
   # Disable checking that method could be a function in classes (often used for organisation).
-  "no-self-use",
+  # "no-self-use",  # The no-init (W0232) warning has been removed. It's ok to not have an __init__ in a class.
 
   # Disable failure for TODO items in the codebase (code will always have TODOs).
   "fixme",
